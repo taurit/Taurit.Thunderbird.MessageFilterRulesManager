@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.89
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.MessageFilterRulesManager", "Taurit.Thunderbird.MessageFilterRulesManager\Taurit.Thunderbird.MessageFilterRulesManager.csproj", "{32109271-7EA2-4CC5-9188-BFCC36144ABB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77AD6D13-300C-4B92-AC40-4768680BB022}
+	EndGlobalSection
+EndGlobal
