@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using Taurit.Thunderbird.ExcelToCsvConverter;
+using Taurit.Thunderbird.MessageFilterRulesManager.Services;
 
 namespace Taurit.Thunderbird.MessageFilterRulesManager
 {
@@ -16,7 +19,8 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             var version = msgFilterRulesFile.Version;
             if (version != "9")
             {
-                Logger.Log($"Thunderbird seems to have upgraded its config file version from 9 to {version}");
+                Logger.Log($"Thunderbird seems to have upgraded its config file version from 9 to `{version}`");
+                Console.ReadLine();
                 return;
             }
 
@@ -25,10 +29,18 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             IReadOnlyList<ExcelRule> rules = reader.Read(excelRulesFileName);
 
             // convert to Thunderbird's model
-            //var tbModel = new RulesFile();
+            List<Rule> tbRules = new RulesConverter().Convert(rules);
+
+            var metadata = new Dictionary<string, string>();
+            metadata.Add("version", "9");
+            metadata.Add("logging", "no");
+            var tbModel = new RulesFile(metadata, tbRules);
 
             // save & overwrite thunderbird's config
-            // todo
+            FileWriter fileWriter = new FileWriter();
+            var serializedModel = fileWriter.SerializeModel(tbModel);
+            var temporaryOutputFileName = "d:\\exported.tb.txt"; // todo replace actual file when I'm sure it's safe
+            File.WriteAllText(temporaryOutputFileName, serializedModel);
         }
 
 

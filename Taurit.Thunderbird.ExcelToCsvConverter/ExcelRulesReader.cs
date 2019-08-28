@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using ExcelDataReader;
 
@@ -29,6 +31,10 @@ namespace Taurit.Thunderbird.ExcelToCsvConverter
                     result.Add(excelRule);
                 }
             } while (reader.NextResult());
+
+            if (result.Count != result.ToHashSet().Count)
+                throw new InvalidOperationException(
+                    "Some rule is duplicated in excel file! sort by text and find a duplicate.");
 
             return result;
         }

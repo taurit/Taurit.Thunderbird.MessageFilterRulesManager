@@ -11,6 +11,10 @@ namespace Taurit.Thunderbird.ExcelToCsvConverter
             if (wholeWordsOnly == null) throw new ArgumentNullException(nameof(wholeWordsOnly));
             if (alsoMatchContent == null) throw new ArgumentNullException(nameof(alsoMatchContent));
 
+            if (text.Contains("\""))
+                throw new ArgumentException($"Quote character is not allowed in text, invalid entry: {text}");
+            if (category.Contains("\""))
+                throw new ArgumentException($"Quote character is not allowed in category name, invalid entry: {category}");
             if (wholeWordsOnly != "y" && wholeWordsOnly != "n")
                 throw new ArgumentException($"WholeWordsOnly must have value `y` or `n`. Found `{wholeWordsOnly}`.");
             if (alsoMatchContent != "y" && alsoMatchContent != "n")

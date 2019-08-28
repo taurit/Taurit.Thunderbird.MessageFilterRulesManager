@@ -20,10 +20,10 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
 
         public string Name { get; }
 
-        public string Enabled { get; private set; }
-        public string Type { get; private set; }
+        public string Enabled { get; set; }
+        public string Type { get; set; }
 
-        public List<Condition> Conditions;
+        public List<Condition> Conditions = new List<Condition>();
 
         public List<RuleAction> Actions { get; set; } = new List<RuleAction>();
 
@@ -47,7 +47,10 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
                         result.Append(" ");
                     }
 
-                    result.Append($"OR ({condition.Field},{condition.Relation},{condition.Value})");
+                    var conditionValue = condition.Value;
+                    if (conditionValue.StartsWith(' ') || conditionValue.EndsWith(' '))
+                        conditionValue = $"\"{conditionValue}\""; // escape it
+                    result.Append($"OR ({condition.Field},{condition.Relation},{conditionValue})");
                 }
 
                 return result.ToString();
