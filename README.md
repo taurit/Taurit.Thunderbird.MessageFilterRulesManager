@@ -17,7 +17,6 @@ Conditions:
 * subject contains ' IoT '
 * subject starts with 'IoT '
 * subject ends with ' IoT'
-* subject contains ' IoT '
 * subject contains ' IoT,'
 * subject contains ' IoT.'
 * subject contains ' IoT?'
