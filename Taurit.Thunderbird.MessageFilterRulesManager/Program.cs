@@ -7,7 +7,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
         static void Main(string[] args)
         {
             var msgFilterRulesFileName = args[0];
-            var msgFilterRulesFile = new MsgFilterRulesFileParser().Parse(msgFilterRulesFileName);
+            var msgFilterRulesFile = new FileParser().Parse(msgFilterRulesFileName);
             var version = msgFilterRulesFile.Version;
 
         }

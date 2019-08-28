@@ -5,7 +5,7 @@ using System.Diagnostics;
 namespace Taurit.Thunderbird.MessageFilterRulesManager
 {
     [DebuggerDisplay("{" + nameof(Name) + "}")]
-    internal class Rule
+    public class Rule
     {
         public RuleAction LastAction;
 

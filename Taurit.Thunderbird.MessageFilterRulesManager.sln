@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.MessageF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.ExcelToCsvConverter", "Taurit.Thunderbird.ExcelToCsvConverter\Taurit.Thunderbird.ExcelToCsvConverter.csproj", "{AE898343-7551-40ED-B971-AF87B6124CFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.MessageFilterRulesManager.Tests", "Taurit.Thunderbird.MessageFilterRulesManager.Tests\Taurit.Thunderbird.MessageFilterRulesManager.Tests.csproj", "{7A9A9997-3D9B-4EAB-9819-EF62FBB8C797}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AE898343-7551-40ED-B971-AF87B6124CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE898343-7551-40ED-B971-AF87B6124CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE898343-7551-40ED-B971-AF87B6124CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9A9997-3D9B-4EAB-9819-EF62FBB8C797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9A9997-3D9B-4EAB-9819-EF62FBB8C797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9A9997-3D9B-4EAB-9819-EF62FBB8C797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9A9997-3D9B-4EAB-9819-EF62FBB8C797}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

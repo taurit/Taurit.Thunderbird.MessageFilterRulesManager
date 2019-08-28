@@ -8,7 +8,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
     /// <summary>
     ///     Class that is able to parse Thunderbird's MsgFilterRules file
     /// </summary>
-    internal class MsgFilterRulesFileParser
+    public class FileParser
     {
         public RulesFile Parse(string fileName)
         {

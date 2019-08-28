@@ -2,7 +2,7 @@
 
 namespace Taurit.Thunderbird.MessageFilterRulesManager
 {
-    internal class RulesFile
+    public class RulesFile
     {
         public RulesFile(Dictionary<string, string> metadata, List<Rule> rules)
         {
