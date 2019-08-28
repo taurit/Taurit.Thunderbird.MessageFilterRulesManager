@@ -23,7 +23,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
         public string Enabled { get; private set; }
         public string Type { get; private set; }
 
-        private List<Condition> conditions;
+        public List<Condition> Conditions;
 
         public List<RuleAction> Actions { get; set; } = new List<RuleAction>();
 
@@ -31,12 +31,12 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             // serialized: eg "AND (subject,contains,GTA) AND (subject,contains,Grand Theft Auto)"
             get
             {
-                if (conditions.Count == 0) return "ALL";
+                if (Conditions.Count == 0) return "ALL";
 
                 StringBuilder result = new StringBuilder();
                 bool first = true;
 
-                foreach (var condition in conditions)
+                foreach (var condition in Conditions)
                 {
                     if (first)
                     {
@@ -66,7 +66,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             }
             else if (key == "condition")
             {
-                conditions = ParseConditions(value);
+                Conditions = ParseConditions(value);
             }
             else if (key == "action")
             {

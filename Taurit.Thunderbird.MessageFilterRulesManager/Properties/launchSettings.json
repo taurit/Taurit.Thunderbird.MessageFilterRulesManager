@@ -2,7 +2,7 @@
   "profiles": {
     "Taurit.Thunderbird.MessageFilterRulesManager": {
       "commandName": "Project",
-      "commandLineArgs": "\"d:\\\\ProgramData\\\\ApplicationData\\\\Thunderbird\\\\Profiles\\\\eaqnr9ie.default\\\\Mail\\\\Feeds\\\\msgFilterRules.dat\""
+      "commandLineArgs": "\"d:\\\\ThunderbirdFilteringRules.xlsx\" \"d:\\\\ProgramData\\\\ApplicationData\\\\Thunderbird\\\\Profiles\\\\eaqnr9ie.default\\\\Mail\\\\Feeds\\\\msgFilterRules.dat\""
     }
   }
 }

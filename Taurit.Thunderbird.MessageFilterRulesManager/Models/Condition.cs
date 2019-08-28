@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Diagnostics;
 
 namespace Taurit.Thunderbird.MessageFilterRulesManager.Models
 {
-    class Condition
+    [DebuggerDisplay("{Field},{Relation},{Value}")]
+    public class Condition
     {
-        public string Field { get; }
-        public string Relation { get; }
-        public string Value { get; }
-
         public Condition(string field, string relation, string value)
         {
             Field = field;
             Relation = relation;
             Value = value;
         }
+
+        public string Field { get; }
+        public string Relation { get; }
+        public string Value { get; }
     }
 }

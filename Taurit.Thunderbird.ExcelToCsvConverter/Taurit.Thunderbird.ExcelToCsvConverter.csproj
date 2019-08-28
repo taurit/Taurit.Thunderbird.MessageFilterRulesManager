@@ -11,10 +11,4 @@
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Example.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
