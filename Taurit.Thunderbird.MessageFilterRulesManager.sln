@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.MessageFilterRulesManager", "Taurit.Thunderbird.MessageFilterRulesManager\Taurit.Thunderbird.MessageFilterRulesManager.csproj", "{32109271-7EA2-4CC5-9188-BFCC36144ABB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.MessageFilterRulesManager", "Taurit.Thunderbird.MessageFilterRulesManager\Taurit.Thunderbird.MessageFilterRulesManager.csproj", "{74FBFFCD-853B-49E2-A6B2-BB1068580509}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taurit.Thunderbird.ExcelToCsvConverter", "Taurit.Thunderbird.ExcelToCsvConverter\Taurit.Thunderbird.ExcelToCsvConverter.csproj", "{AE898343-7551-40ED-B971-AF87B6124CFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32109271-7EA2-4CC5-9188-BFCC36144ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FBFFCD-853B-49E2-A6B2-BB1068580509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FBFFCD-853B-49E2-A6B2-BB1068580509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FBFFCD-853B-49E2-A6B2-BB1068580509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FBFFCD-853B-49E2-A6B2-BB1068580509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE898343-7551-40ED-B971-AF87B6124CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE898343-7551-40ED-B971-AF87B6124CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE898343-7551-40ED-B971-AF87B6124CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE898343-7551-40ED-B971-AF87B6124CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
