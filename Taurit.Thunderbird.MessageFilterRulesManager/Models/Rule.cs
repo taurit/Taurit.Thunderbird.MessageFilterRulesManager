@@ -95,7 +95,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             if (serializedConditions == null) throw new ArgumentNullException(nameof(serializedConditions));
 
             List<Condition> conditions = new List<Condition>();
-            var split = serializedConditions.Split(new[] { " OR ", "OR " }, StringSplitOptions.RemoveEmptyEntries);
+            var split = serializedConditions.Split(new[] { ") OR (", "OR (" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var condition in split)
             {
                 var unwrapped = Unwrap(condition);
@@ -109,13 +109,14 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             return conditions;
         }
 
-        private string Unwrap(string quotedString)
+        private string Unwrap(string maybeQuotedString)
         {
-            if (String.IsNullOrEmpty(quotedString)) throw new ArgumentNullException(nameof(quotedString));
-            if (quotedString[0] != '(') throw new ArgumentException(quotedString);
-            if (quotedString[quotedString.Length - 1] != ')') throw new ArgumentException(quotedString);
+            if (maybeQuotedString[maybeQuotedString.Length - 1] == ')')
+            {
+                return maybeQuotedString.Substring(0, maybeQuotedString.Length - 1);
+            }
 
-            return quotedString.Substring(1, quotedString.Length - 2);
+            return maybeQuotedString;
         }
     }
 }

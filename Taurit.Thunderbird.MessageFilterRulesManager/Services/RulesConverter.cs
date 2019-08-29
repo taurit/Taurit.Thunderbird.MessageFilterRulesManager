@@ -84,6 +84,8 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
                 conditions.Add(new Condition("subject", "contains", $" {condition.Text}."));
                 conditions.Add(new Condition("subject", "contains", $" {condition.Text}?"));
                 conditions.Add(new Condition("subject", "contains", $" {condition.Text}!"));
+                conditions.Add(new Condition("subject", "contains", $" {condition.Text}-"));
+                conditions.Add(new Condition("subject", "contains", $" {condition.Text}:"));
 
                 if (condition.AlsoMatchContent)
                 {
@@ -92,6 +94,8 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
                     conditions.Add(new Condition("body", "contains", $" {condition.Text}."));
                     conditions.Add(new Condition("body", "contains", $" {condition.Text}?"));
                     conditions.Add(new Condition("body", "contains", $" {condition.Text}!"));
+                    conditions.Add(new Condition("body", "contains", $" {condition.Text}-"));
+                    conditions.Add(new Condition("body", "contains", $" {condition.Text}:"));
                 }
             }
 

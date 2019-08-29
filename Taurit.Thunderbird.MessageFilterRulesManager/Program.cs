@@ -39,8 +39,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
             // save & overwrite thunderbird's config
             FileWriter fileWriter = new FileWriter();
             var serializedModel = fileWriter.SerializeModel(tbModel);
-            var temporaryOutputFileName = "d:\\exported.tb.txt"; // todo replace actual file when I'm sure it's safe
-            File.WriteAllText(temporaryOutputFileName, serializedModel);
+            File.WriteAllText(thunderbirdRulesFileName, serializedModel);
         }
 
 
