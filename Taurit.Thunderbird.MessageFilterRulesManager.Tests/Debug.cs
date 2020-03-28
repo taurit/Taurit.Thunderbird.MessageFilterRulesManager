@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using CsvHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Taurit.Thunderbird.MessageFilterRulesManager.Services;
 
 namespace Taurit.Thunderbird.MessageFilterRulesManager.Tests
 {

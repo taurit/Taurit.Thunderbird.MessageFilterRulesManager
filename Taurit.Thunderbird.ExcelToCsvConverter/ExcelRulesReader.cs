@@ -71,10 +71,9 @@ namespace Taurit.Thunderbird.ExcelToCsvConverter
         {
             var text = reader.GetString(0);
             var wholeWordsOnly = reader.GetString(1);
-            var alsoMatchContent = reader.GetString(2);
-            var category = reader.GetString(3);
+            var category = reader.GetString(2);
 
-            var excelRule = new ExcelRule(text, wholeWordsOnly, alsoMatchContent, category);
+            var excelRule = new ExcelRule(text, wholeWordsOnly, category);
             return excelRule;
         }
     }

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text.RegularExpressions;
+using Taurit.Thunderbird.MessageFilterRulesManager.Models;
 
-namespace Taurit.Thunderbird.MessageFilterRulesManager
+namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
 {
     /// <summary>
     ///     Class that is able to parse Thunderbird's MsgFilterRules file
@@ -33,7 +35,10 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
                     if (numberOfNameLinesEncountered == 0)
                         metadata[kv.key] = kv.value;
                     else if (kv.key != "name")
+                    {
+                        Debug.Assert(rule != null, nameof(rule) + " != null. I don't remember this code, so I'm not sure");
                         rule.AddProperty(kv.key, kv.value);
+                    }
                 }
             }
 

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Taurit.Thunderbird.MessageFilterRulesManager
+namespace Taurit.Thunderbird.MessageFilterRulesManager.Models
 {
     [DebuggerDisplay("{" + nameof(Action) + "} {" + nameof(ActionValue) + "}")]
     public class RuleAction

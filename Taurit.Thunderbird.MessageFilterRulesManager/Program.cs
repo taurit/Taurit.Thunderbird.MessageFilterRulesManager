@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Taurit.Thunderbird.ExcelToCsvConverter;
+using Taurit.Thunderbird.MessageFilterRulesManager.Models;
 using Taurit.Thunderbird.MessageFilterRulesManager.Services;
 
 namespace Taurit.Thunderbird.MessageFilterRulesManager
@@ -66,7 +67,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager
 
             var metadata = new Dictionary<string, string>();
             metadata.Add("version", "9");
-            metadata.Add("logging", "no");
+            metadata.Add("logging", "yes");
             var tbModel = new RulesFile(metadata, tbRules);
 
             // save & overwrite thunderbird's config

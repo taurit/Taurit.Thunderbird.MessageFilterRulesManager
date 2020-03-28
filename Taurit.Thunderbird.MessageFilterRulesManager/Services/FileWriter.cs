@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using System.Text.RegularExpressions;
+using Taurit.Thunderbird.MessageFilterRulesManager.Models;
 
 namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
 {

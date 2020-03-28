@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Taurit.Thunderbird.MessageFilterRulesManager
+namespace Taurit.Thunderbird.MessageFilterRulesManager.Models
 {
     public class RulesFile
     {

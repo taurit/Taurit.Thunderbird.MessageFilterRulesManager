@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Text;
-using Taurit.Thunderbird.MessageFilterRulesManager.Models;
 
-namespace Taurit.Thunderbird.MessageFilterRulesManager
+namespace Taurit.Thunderbird.MessageFilterRulesManager.Models
 {
     [DebuggerDisplay("{" + nameof(Name) + "}")]
     public class Rule

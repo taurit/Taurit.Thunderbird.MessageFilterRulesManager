@@ -52,7 +52,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
                 new RuleAction
                 {
                     Action = "Move to folder",
-                    ActionValue = "mailbox://nobody@Feeds/Archives/2019"
+                    ActionValue = "mailbox://nobody@Feeds/Archives/2020"
                 },
                 new RuleAction
                 {
@@ -74,8 +74,6 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
             if (condition.WholeWordsOnly == false)
             {
                 conditions.Add(new Condition("subject", "contains", condition.Text));
-
-                if (condition.AlsoMatchContent) conditions.Add(new Condition("body", "contains", condition.Text));
             }
             else
             {
@@ -86,17 +84,6 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
                 conditions.Add(new Condition("subject", "contains", $" {condition.Text}!"));
                 conditions.Add(new Condition("subject", "contains", $" {condition.Text}-"));
                 conditions.Add(new Condition("subject", "contains", $" {condition.Text}:"));
-
-                if (condition.AlsoMatchContent)
-                {
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text} "));
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text},"));
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text}."));
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text}?"));
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text}!"));
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text}-"));
-                    conditions.Add(new Condition("body", "contains", $" {condition.Text}:"));
-                }
             }
 
             return conditions;
