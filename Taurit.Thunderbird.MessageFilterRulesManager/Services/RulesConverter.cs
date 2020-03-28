@@ -9,7 +9,7 @@ namespace Taurit.Thunderbird.MessageFilterRulesManager.Services
     /// <summary>
     ///     Allows to convert excel rules into thunderbird's rules
     /// </summary>
-    internal class RulesConverter
+    public class RulesConverter
     {
         private const string WhitelistKeyword = "whitelist";
 
