@@ -1,32 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
-using Taurit.Thunderbird.ExcelToCsvConverter;
-using Taurit.Thunderbird.MessageFilterRulesManager.Models;
-using Taurit.Thunderbird.MessageFilterRulesManager.Services;
 
 namespace Taurit.Thunderbird.FilterRulesTester
 {
-
-
     internal class Program
     {
         private readonly RuleTester _ruleTester;
+        private readonly StatsCollector _statsCollector;
 
         private Program(string pathToRulesInExcelFormat)
         {
-            // read my rules in Excel format
-            var reader = new ExcelRulesReader();
-            var rules = reader.Read(pathToRulesInExcelFormat);
-
-            // convert to Thunderbird rules model
-            var thunderbirdRules = new RulesConverter().Convert(rules);
-
-            this._ruleTester = new RuleTester(thunderbirdRules);
+            _statsCollector = new StatsCollector();
+            _ruleTester = new RuleTester(pathToRulesInExcelFormat, _statsCollector);
         }
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             var program = new Program(@"d:\ProgramData\ApplicationData\TauritToolkit\ThunderbirdFilteringRules.xlsx");
 
@@ -38,15 +26,15 @@ namespace Taurit.Thunderbird.FilterRulesTester
 
         private void SimulateFilterExecutionOnRealRssFeedItems(params string[] pathsToRssFeedArchiveFiles)
         {
-            int index = 0;
-            int nextPauseIndex = 40;
+            var index = 0;
+            var nextPauseIndex = 10000; // use negative number to disable
             // read subjects of real news item headers from my RSS feed archive
             foreach (var archiveFilePath in pathsToRssFeedArchiveFiles)
             {
                 var lines = File.ReadLines(archiveFilePath);
                 foreach (var line in lines)
                 {
-                    if (TryGetSubjectFromLine(line, out string subject))
+                    if (TryGetSubjectFromLine(line, out var subject))
                     {
                         _ruleTester.TestFilterOnSingleRssItem(subject);
                         index++;
@@ -54,14 +42,17 @@ namespace Taurit.Thunderbird.FilterRulesTester
 
                     if (index == nextPauseIndex)
                     {
-                        nextPauseIndex += 40;
+                        nextPauseIndex += 55;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("Press key to see more items...");
                         Console.ReadKey();
+                        _ruleTester.UpdateRules();
                     }
                 }
-
             }
+
+            _statsCollector.DisplayMostUsedRules();
+            _statsCollector.DisplayLeastUsedRules();
         }
 
         private bool TryGetSubjectFromLine(string line, out string subject)

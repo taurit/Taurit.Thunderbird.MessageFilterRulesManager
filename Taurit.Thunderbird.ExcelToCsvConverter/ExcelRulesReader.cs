@@ -16,7 +16,7 @@ namespace Taurit.Thunderbird.ExcelToCsvConverter
             var disabledCategoriesNames = new List<string>();
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            using var stream = File.Open(excelRulesFileName, FileMode.Open, FileAccess.Read);
+            using var stream = File.Open(excelRulesFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
             using var reader = ExcelReaderFactory.CreateReader(stream);
             reader.Read(); // skip headers row
 
@@ -64,6 +64,7 @@ namespace Taurit.Thunderbird.ExcelToCsvConverter
             }
 
             var enabledCategoriesNamesHashSet = enabledCategoriesNames.ToHashSet();
+
             return allRules.Where(x => enabledCategoriesNamesHashSet.Contains(x.Category)).ToList();
         }
 
